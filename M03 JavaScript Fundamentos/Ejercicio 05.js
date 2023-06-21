@@ -113,17 +113,23 @@ function esVocal(letra) {
   // Tu código:
 
   console.log(letra);
-  letra= letra.toLowerCase();                   // Paso de mayuscula a minuscula
-  aux = letra.length; console.log(aux);         // Calculo el tamaño del string
-  if ( letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u" && aux === 1) {
-   return "Es vocal"; // Si es vocal y además es un solo caracter retorno "Es Vocal".
-  }
-  else {
-   return "Dato incorrecto"; // Si no cumple la condición retorno "Dato Incorrecto".
+  letra = letra.toLowerCase(); // Paso de mayuscula a minuscula
+  aux = letra.length;
+  console.log(aux); // Calculo el tamaño del string
+  if (
+    letra === "a" ||
+    letra === "e" ||
+    letra === "i" ||
+    letra === "o" ||
+    (letra === "u" && aux === 1)
+  ) {
+    return "Es vocal"; // Si es vocal y además es un solo caracter retorno "Es Vocal".
+  } else {
+    return "Dato incorrecto"; // Si no cumple la condición retorno "Dato Incorrecto".
   }
 }
 
-console.log(esVocal("a"));
+console.log(esVocal("A"));
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
