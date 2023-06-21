@@ -140,11 +140,8 @@ function estaEnRango(num) {
 
   console.log(num);
 
-  if (num < 50 && num > 20) 
-   return true;
-
-  else 
-   return false;
+  if (num < 50 && num > 20) return true;
+  else return false;
 }
 
 console.log(estaEnRango(2));
@@ -157,17 +154,16 @@ function esEntero(num) {
   // De lo contrario, retorna false.
   // Tu código:
 
-   console.log(num);
+  console.log(num);
 
-   aux = num % 1 ;
+  aux = num % 1;
 
-   console.log(aux);
-   if ( aux === 0) {
-      return true;
-   }
-   else {
-      return false;
-   }
+  console.log(aux);
+  if (aux === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log(esEntero(-10));
@@ -181,22 +177,13 @@ function fizzBuzz(num) {
 
   console.log(num);
 
-   if (num % 5 == 0 && num % 3 ==0) 
-      return "fizzbuzz";
-   
-   else if (num % 5 == 0)
-      return "buzz";
-
-   else if (num % 3 ==0)
-      return "fizz";
-   
-   else
-      return false;
-
+  if (num % 5 == 0 && num % 3 == 0) return "fizzbuzz";
+  else if (num % 5 == 0) return "buzz";
+  else if (num % 3 == 0) return "fizz";
+  else return false;
 }
 
 console.log(fizzBuzz(21));
-
 
 function operadoresLogicos(num1, num2, num3) {
   // La función recibe tres números distintos.
@@ -206,7 +193,23 @@ function operadoresLogicos(num1, num2, num3) {
   // Si todos los argumentos son cero, retornar ---> "Error".
   // Si no se cumple ninguna de las condiciones anteriores, retornar false.
   // Tu código:
+
+  console.log(num1, num2, num3);
+
+  if (num1 > num2 && num1 > num3 && num1 > 0) {
+    return "Numero 1 es mayor y positivo";
+  } else if (num3 > num1 && num3 > num2) {
+    return (num3 = num3 + 1);
+  } else if (num1 < 0 || num2 < 0 || num3 < 0) {
+    return "Hay negativos";
+  } else if (num1 == 0 && num2 == 0 && num3 == 0) {
+    return "Error";
+  } else {
+    return false;
+  }
 }
+
+console.log(operadoresLogicos(2, -4, 1));
 
 function esPrimo(num) {
   // Retornar true si "num" es primo.
@@ -215,19 +218,57 @@ function esPrimo(num) {
   // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
   // [Nota]: los números negativos, 0 y 1 NO son números primos.
   // Tu código:
+
+  console.log(num);
+
+  contar = 10; // Hasta donde contar.
+
+  for (i = 0; i <= contar; i++) {
+    console.log(i);
+   
+    if (i % num == 0 && num % 1 == 0 && num >= 2) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  }
 }
+console.log(esPrimo(3));
 
 function esVerdadero(valor) {
   // Si "valor" es verdadero retornar "Soy verdadero".
   // Caso contrario, retornar "Soy falso".
   // Tu código:
+
+  if ( valor === "valor") {
+    return "Soy verdadero";
+  }
+  else {
+    return "Soy falso";
+  }
 }
+
+console.log(esVerdadero("valor"));
 
 function tieneTresDigitos(num) {
   // Si el número recibido tiene tres dígitos retornar true.
   // Caso contrario, retornar false.
   // Tu código:
+
+  console.log(num);
+  aux= num.toString();
+  aux1=aux.length;
+  console.log(aux1);
+  if (aux1 === 3){
+    return true;
+  }
+  else {
+    return false;
+  }
 }
+
+console.log(tieneTresDigitos(443));
 
 function doWhile(num) {
   // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
