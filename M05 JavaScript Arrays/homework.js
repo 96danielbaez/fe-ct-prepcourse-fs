@@ -168,7 +168,7 @@ function multiplicarArgumentos(argumentos) {
       producto = producto * argumentos[i];
     }
   }
-  
+
   return producto;
 }
 
@@ -177,39 +177,141 @@ console.log(multiplicarArgumentos((vector = [1, 5, 2, 3])));
 function cuentoElementos(array) {
   // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
   // Tu código:
+
+  console.log(array);
+  /*cant = 0;
+  for (i = 0; i < array.length; i++) {
+    if (array[i] > 18) {
+      cant++;
+    }
+  }*/
+  cant = 0;
+  array.forEach((num) => {
+    if (num > 18) {
+      cant++;
+    }
+  });
+
+  console.log(cant);
+  return cant;
 }
+
+console.log(cuentoElementos((vector = [18, 1, 4, 23, 55, 66, 17])));
 
 function diaDeLaSemana(numeroDeDia) {
   // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
   // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
   // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
   // Tu código:
+
+  console.log(numeroDeDia);
+
+  vector = [1, 2, 3, 4, 5, 6, 7];
+
+  vector.forEach((numeroDeDia) => {
+    if (
+      numeroDeDia == 1 ||
+      numeroDeDia == 2 ||
+      numeroDeDia == 3 ||
+      numeroDeDia == 4 ||
+      numeroDeDia == 5
+    ) {
+      estado = "Es dia laboral";
+    } else if (numeroDeDia == 6 || numeroDeDia == 7) {
+      estado = "Es fin de semana";
+    }
+  });
+
+  return estado;
 }
+
+console.log(diaDeLaSemana(7));
 
 function empiezaConNueve(num) {
   // Esta función recibe por parámetro un número.
   // Debe retornar true si el entero inicia con 9 y false en otro caso.
   // Tu código:
+
+  console.log(num);
+  console.log((str = num + "")); // Convertimos entero a string
+  console.log((vec = str.split(""))); // String a vector
+
+  if (vec[0] == "9") {
+    estado = true;
+  } else {
+    estado = false;
+  }
+
+  return estado;
 }
+
+console.log(empiezaConNueve(4123));
 
 function todosIguales(array) {
   // Si todos los elementos del arreglo son iguales, retornar true.
   // Caso contrario retornar false.
   // Tu código:
+
+  console.log(array);
+  sonI = (x) => x == array[0];
+  console.log((estado = array.every(sonI)));
+  return estado;
 }
 
+console.log(todosIguales((vector = [2, 2, 2, 2])));
+
 function mesesDelAño(array) {
-  // El arreglo contiene algunos meses del año desordenados. Debes recorrerlo, buscar los meses "Enero",
+  // El arreglo contiene algunos meses del año desordenados.
+  // Debes recorrerlo, buscar los meses "Enero",
   // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
   // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
   // Tu código:
+
+  console.log(array);
+
+  vector = [];
+
+  console.log(vector);
+  array.forEach((mes) => {
+    if (mes == "Enero" || mes == "Marzo" || mes == "Noviembre") {
+      vector.push(mes);
+    }
+  });
+  console.log(vector);
+
+  if (vector.length == 3) {
+    return vector;
+  } else {
+    return "No se encontraron los meses pedidos";
+  }
 }
+
+console.log(
+  mesesDelAño(
+    (vector = [
+      "Enero",
+      "Agosto",
+      "Septiembre",
+      "Diciembre",
+      "Marzo",
+      "Octubre",
+      "Noviembre",
+    ])
+  )
+);
 
 function tablaDelSeis() {
   // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
   // Tu código:
+  resultados = [];
+  acum = 0;
+  for (i = 1; i < 10; i++) {
+    
+  }
 }
+
+console.log(tablaDelSeis());
 
 function mayorACien(array) {
   // La función recibe un arreglo con enteros entre 0 y 200.
