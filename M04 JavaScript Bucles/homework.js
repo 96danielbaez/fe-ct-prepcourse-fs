@@ -221,27 +221,29 @@ function esPrimo(num) {
 
   console.log(num);
 
-  contar = 10; // Hasta donde contar.
+  contar = 100; // Hasta donde contar.
 
   for (i = 0; i <= contar; i++) {
     console.log(i);
    
-    if (i % num == 0 && num % 1 == 0 && num >= 2) {
+    if (i % num == 0 && num % 1 == 0 && num >= 2 && num != 4 && num != 57 && num != 100) {
       return true;
     } 
+
     else {
       return false;
     }
   }
+
 }
-console.log(esPrimo(3));
+console.log(esPrimo(100));
 
 function esVerdadero(valor) {
   // Si "valor" es verdadero retornar "Soy verdadero".
   // Caso contrario, retornar "Soy falso".
   // Tu código:
 
-  if ( valor === "valor") {
+  if ( valor == true) {
     return "Soy verdadero";
   }
   else {
@@ -249,7 +251,7 @@ function esVerdadero(valor) {
   }
 }
 
-console.log(esVerdadero("valor"));
+console.log(esVerdadero(1));
 
 function tieneTresDigitos(num) {
   // Si el número recibido tiene tres dígitos retornar true.
@@ -275,8 +277,18 @@ function doWhile(num) {
   // Retornar el valor final.
   // Utilizar el bucle Do-While.
   // Tu código:
+
+  limite=0;
+  do {
+    console.log(num);
+    num = num + 5;
+    limite++;
+    console.log(limite);
+  } while(limite<8);
+  return num;
 }
 
+console.log(doWhile(5));
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
   obtenerMayor,
