@@ -152,24 +152,20 @@ function numeroMasGrande(arrayOfNums) {
 
 console.log(numeroMasGrande((vector = [1, 100, 3, 250, 99, 76])));
 
-function multiplicarArgumentos(argumentos) {
+function multiplicarArgumentos(arguments) {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
   // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
   // [PISTA]: "arguments" es un arreglo.
   // Tu código:
 
-  console.log(argumentos);
+  console.log(arguments);
   producto = 1;
 
-  if (argumentos == 0) {
-    producto = 0;
-  } else {
-    for (i = 0; i < argumentos.length; i++) {
-      producto = producto * argumentos[i];
-    }
-  }
-
-  return producto;
+  console.log(
+    arguments.forEach((x) => {
+      x = x * producto;
+    })
+  );
 }
 
 console.log(multiplicarArgumentos((vector = [1, 5, 2, 3])));
@@ -206,26 +202,14 @@ function diaDeLaSemana(numeroDeDia) {
 
   console.log(numeroDeDia);
 
-  vector = [1, 2, 3, 4, 5, 6, 7];
-
-  vector.forEach((numeroDeDia) => {
-    if (
-      numeroDeDia == 1 ||
-      numeroDeDia == 2 ||
-      numeroDeDia == 3 ||
-      numeroDeDia == 4 ||
-      numeroDeDia == 5
-    ) {
-      estado = "Es dia laboral";
-    } else if (numeroDeDia == 6 || numeroDeDia == 7) {
-      estado = "Es fin de semana";
-    }
-  });
-
-  return estado;
+  if (numeroDeDia == 6 || numeroDeDia == 7) {
+    return "Es fin de semana";
+  } else if (numeroDeDia >= 1 && numeroDeDia <= 5) {
+    return "Es dia laboral";
+  }
 }
 
-console.log(diaDeLaSemana(7));
+console.log(diaDeLaSemana(6));
 
 function empiezaConNueve(num) {
   // Esta función recibe por parámetro un número.
@@ -344,7 +328,22 @@ function breakStatement(num) {
   // la ejecución y retornar el string: "Se interrumpió la ejecución".
   // [PISTA]: utiliza el statement 'break'.
   // Tu código:
+
+  console.log(num);
+  vector = [];
+  for (i = 0; i < 10; i++) {
+    num = num + 2;
+    vector[i] = num;
+    if (10 == num) {
+      return "Se interrumpió la ejecución";
+    }
+  }
+
+  console.log(vector);
+  return vector;
 }
+
+console.log(breakStatement(1));
 
 function continueStatement(num) {
   // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
