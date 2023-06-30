@@ -305,10 +305,10 @@ function tablaDelSeis() {
   // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
   // Tu código:
   resultados = [];
-  acum = 0;
-  for (i = 1; i < 10; i++) {
-    
+  for (i = 0; i <= 10; i++) {
+    resultados[i] = i * 6;
   }
+  return resultados;
 }
 
 console.log(tablaDelSeis());
@@ -317,7 +317,21 @@ function mayorACien(array) {
   // La función recibe un arreglo con enteros entre 0 y 200.
   // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
   // Tu código:
+
+  console.log(array);
+  mayor100 = [];
+
+  array.forEach((x) => {
+    if (x > 100) {
+      mayor100.push(x);
+    }
+  });
+
+  console.log(mayor100);
+  return mayor100;
 }
+
+console.log(mayorACien((vector = [1, 200, 50, 150, 101, 123, 4])));
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
