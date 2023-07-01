@@ -152,23 +152,26 @@ function numeroMasGrande(arrayOfNums) {
 
 console.log(numeroMasGrande((vector = [1, 100, 3, 250, 99, 76])));
 
-function multiplicarArgumentos(arguments) {
+function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
   // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
   // [PISTA]: "arguments" es un arreglo.
   // Tu código:
 
   console.log(arguments);
-  producto = 1;
-
-  console.log(
-    arguments.forEach((x) => {
-      x = x * producto;
-    })
-  );
+  if (arguments.length === 0) {
+    return 0;
+  } else {
+    producto = 1;
+    for (i = 0; i < arguments.length; i++) {
+      producto = arguments[i] * producto;
+    }
+    console.log(producto);
+    return producto;
+  }
 }
 
-console.log(multiplicarArgumentos((vector = [1, 5, 2, 3])));
+console.log(multiplicarArgumentos((10, 2, 3)));
 
 function cuentoElementos(array) {
   // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
@@ -331,19 +334,19 @@ function breakStatement(num) {
 
   console.log(num);
   vector = [];
+
   for (i = 0; i < 10; i++) {
     num = num + 2;
     vector[i] = num;
-    if (10 == num) {
+    if (vector[i] == 10) {
       return "Se interrumpió la ejecución";
     }
   }
-
   console.log(vector);
   return vector;
 }
 
-console.log(breakStatement(1));
+console.log(breakStatement(-4));
 
 function continueStatement(num) {
   // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -352,7 +355,26 @@ function continueStatement(num) {
   // se continua con la siguiente iteración.
   // [PISTA]: utiliza el statement 'continue'.
   // Tu código:
+
+  console.log(num);
+  resultado = [];
+  iteraciones = 0;
+
+  while (iteraciones < 10) {
+    iteraciones++;
+    if (iteraciones === 5) {
+      continue;
+    }
+
+    num += 2;
+    console.log(num);
+    resultado.push(num);
+  }
+
+  return resultado;
 }
+
+console.log(continueStatement(-4));
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {

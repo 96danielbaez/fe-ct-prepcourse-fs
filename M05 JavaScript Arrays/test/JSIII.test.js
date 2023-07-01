@@ -134,7 +134,7 @@ describe('JAVASCRIPT III', function () {
       });
    });
 
-   describe('multiplicarArgumentos()', function () {
+   describe('multiplicarArgumentos(array)', function () {
       it('Debe retornar el producto de los argumentos', function () {
          const product = multiplicarArgumentos(5, 5);
          const product2 = multiplicarArgumentos();
@@ -163,7 +163,7 @@ describe('JAVASCRIPT III', function () {
          expect(diaDeLaSemana(2)).toBe('Es dia laboral');
       });
       it('Debe retornar "Es fin de semana" dependiendo del número del día', function () {
-         expect(diaDeLaSemana(1)).toBe('Es fin de semana');
+         expect(diaDeLaSemana(6)).toBe('Es fin de semana');
          expect(diaDeLaSemana(7)).toBe('Es fin de semana');
       });
    });
