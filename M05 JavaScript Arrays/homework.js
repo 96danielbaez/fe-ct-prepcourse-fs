@@ -159,19 +159,25 @@ function multiplicarArgumentos() {
   // Tu código:
 
   console.log(arguments);
-  if (arguments.length === 0) {
+  console.log((array = arguments[0]));
+
+  console.log(array.length);
+  producto = 1;
+
+  if (array.length === 0) {
     return 0;
-  } else {
-    producto = 1;
-    for (i = 0; i < arguments.length; i++) {
-      producto = arguments[i] * producto;
-    }
-    console.log(producto);
-    return producto;
+  } else if (array.length === 1) {
+    return array[0];
   }
+  array.forEach((x) => {
+    producto = x * producto;
+  });
+
+  console.log(producto);
+  return producto;
 }
 
-console.log(multiplicarArgumentos((10, 2, 3)));
+console.log(multiplicarArgumentos((vector = [1, 2, 3, 4, 5])));
 
 function cuentoElementos(array) {
   // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
