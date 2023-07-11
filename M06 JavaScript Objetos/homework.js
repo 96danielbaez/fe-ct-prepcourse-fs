@@ -74,52 +74,164 @@ function invocarMetodo(objeto, metodo) {
   // [NOTA]: no necesitar retornar nada.
   // Tu código:
 
+  console.log(objeto); // RECIBO EL OBJETO
+  console.log(metodo); // RECIBO UN STRING
+  console.log(objeto.hasOwnProperty(metodo)); // COMPARO SI MI OBJETO TIENE UNA PROPIEDAD IGUAL
+  console.log(objeto.incrementX()); // EJECUTO LA FUNCION DE MI OBJETO
 }
 
+var objetoPrueba2 = {
+  x: 1,
+  incrementX: function () {
+    console.log(++this.x);
+  },
+};
+
+console.log(invocarMetodo(objetoPrueba2, "incrementX"));
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
   // Debes multiplicar este número por 5 y retornar el resultado.
   // Tu código:
+
+  console.log(objetoMisterioso);
+
+  console.log((x = objetoMisterioso.numeroMisterioso * 5));
+
+  return x;
 }
+
+var objetoPrueba3 = {
+  numeroMisterioso: 2,
+};
+
+console.log(multiplicarNumeroDesconocidoPorCinco(objetoPrueba3));
 
 function eliminarPropiedad(objeto, propiedad) {
   // El parámetro "propiedad" es una propiedad del objeto que recibes.
   // Debes eliminarla del objeto y retornarlo finalmente.
   // Tu código:
+
+  console.log(objeto);
+  console.log(propiedad);
+
+  console.log(delete objeto[propiedad]); // Eliminamos la propiedad recibida
+  console.log(objeto);
+
+  return objeto;
 }
+
+var objetoPrueba4 = {
+  nombre: "Daniel",
+  edad: 26,
+  hamster: true,
+};
+
+console.log(eliminarPropiedad(objetoPrueba4, "hamster"));
 
 function tieneEmail(objetoUsuario) {
   // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
   // En ese caso retornar true. Caso contrario, false.
   // Tu código:
+
+  console.log(objetoUsuario);
+
+  if (objetoUsuario.email != "") {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+var objetoPrueba5 = {
+  nombre: "Daniel",
+  edad: 26,
+  email: "correo@gmail.com",
+};
+
+console.log(tieneEmail(objetoPrueba5));
 
 function tienePropiedad(objeto, propiedad) {
   // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
   // En ese caso retornar true. Caso contrario, false.
   // Tu código:
+
+  console.log(objeto);
+  console.log(propiedad);
+
+  console.log((chequeo = objeto.hasOwnProperty(propiedad)));
+
+  if (chequeo) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+var objetoPrueba6 = {
+  propiedad: "prueba",
+};
+
+console.log(tienePropiedad(objetoPrueba6, "propiedad"));
 
 function verificarPassword(objetoUsuario, password) {
   // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
   // En ese caso retornar true. Caso contrario, false.
   // Tu código:
+
+  console.log(objetoUsuario);
+  console.log(password);
+  console.log(objetoUsuario.hasOwnProperty("password"));
+
+  if (objetoUsuario.hasOwnProperty("password")) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+var objetoPrueba7 = {
+  usuario: "pepito123",
+  password: "123",
+};
+
+console.log(verificarPassword(objetoPrueba7, "123"));
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
   // Reemplaza la contrseña guardada en la propiedad "password" del "objetoUsuario".
   // La nueva contraseña la recibes por parámetro.
   // Retornar el objeto.
   // Tu código:
+
+  console.log(objetoUsuario);
+  console.log(nuevaPassword);
+
+  console.log((objetoUsuario.password = nuevaPassword));
+  return objetoUsuario;
 }
+
+console.log(actualizarPassword(objetoPrueba7, "1234"));
 
 function agregarAmigo(objetoUsuario, nuevoAmigo) {
   // El parámetro "objetoUsuario" tiene una propiedad llamada "amigos" igual a un arreglo.
   // Debes agregar el "nuevoAmigo" al final de este arreglo.
   // Retornar el objeto.
   // Tu código:
+
+  console.log(objetoUsuario);
+  console.log(nuevoAmigo);
+
+  console.log(objetoUsuario["amigos"].push(nuevoAmigo));
+  console.log(objetoUsuario);
+
+  return objetoUsuario;
 }
+
+var objetoPrueba8 = {
+  amigos: ["Pancho", "Pedro", "Carlitos"],
+};
+
+console.log(agregarAmigo(objetoPrueba8, "Arnaldo"));
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
   // El parámetro "objetoMuchosUsuarios" es un arreglo de objetos (usuarios).
