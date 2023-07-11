@@ -14,23 +14,36 @@ function crearGato(nombre, edad) {
   var gato = {
     nombre: nombre,
     edad: edad,
-    meow: () => {
-      console.log("Meow!");
+    meow: function () {
+      return "Meow!";
     },
   };
 
-  for (var i in gato) {
-    return console.log(gato, gato[i]);
-  }
+  console.log(gato.meow());
+
+  return gato;
 }
 
 console.log(crearGato("Molly", 5));
+
 function nuevoUsuario(nombre, email, password) {
   // Debes crear un nuevo objeto.
   // Este debe tener las propiedades: "nombre", "email" y "password" con sus respectivos valores.
   // Retornar el objeto.
   // Tu código:
+
+  console.log(nombre, email, password);
+
+  objeto = {
+    nombre: nombre,
+    email: email,
+    password: password,
+  };
+
+  return objeto;
 }
+
+console.log(nuevoUsuario("Daniel", "correo@gmail.com", "password123"));
 
 function agregarPropiedad(objeto, propiedad) {
   // Recibirás un objeto por parámetro.
@@ -38,14 +51,31 @@ function agregarPropiedad(objeto, propiedad) {
   // Esta propiedad será igual al valor `null`.
   // Retornar el objeto.
   // Tu código:
+
+  console.log(objeto, propiedad);
+
+  objeto[propiedad] = null;
+
+  console.log(objeto);
+
+  return objeto;
 }
+
+var objetoPrueba = {
+  nombre: "Daniel",
+  edad: 26,
+};
+
+console.log(agregarPropiedad(objetoPrueba, "hamster"));
 
 function invocarMetodo(objeto, metodo) {
   // El parámetro "metodo" es un string que coincide con el nombre de una propiedad del objeto recibido.
   // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
   // [NOTA]: no necesitar retornar nada.
   // Tu código:
+
 }
+
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
