@@ -234,12 +234,34 @@ var objetoPrueba8 = {
 console.log(agregarAmigo(objetoPrueba8, "Arnaldo"));
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
-  // El parámetro "objetoMuchosUsuarios" es un arreglo de objetos (usuarios).
+  // El parámetro "objetoMuchosUsuarios" es un array de objetos (usuarios).
   // Cada usuario tiene una propiedad llamada "esPremium".
   // Define esta propiedad de todos los usuarios como true.
   // Retornar el arreglo.
   // Tu código:
+
+  console.log(objetoMuchosUsuarios);
+  console.log(objetoMuchosUsuarios.length); // CANTIDAD USUARIOS
+
+  // RECORREMOS EL ARRAY
+
+  for (var i = 0; i < objetoMuchosUsuarios.length; i++) {
+    console.log(objetoMuchosUsuarios[i]);
+    objetoMuchosUsuarios[i].esPremium = true;
+  }
+
+  return objetoMuchosUsuarios;
 }
+
+muchosUsuarios = [
+  { usuario: "pepito", esPremium: false },
+  { usuario: "pepito", esPremium: false },
+  { usuario: "pepito", esPremium: false },
+  { usuario: "pepito", esPremium: false },
+  { usuario: "pepito", esPremium: false },
+];
+
+console.log(pasarUsuarioAPremium(muchosUsuarios));
 
 function sumarLikesDeUsuario(objetoUsuario) {
   // El parámetro "objetoUsuario" tiene una propiedad llamada "posts" que es un arreglo.
