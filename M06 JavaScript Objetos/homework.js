@@ -269,7 +269,34 @@ function sumarLikesDeUsuario(objetoUsuario) {
   // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
   // Debes sumar los likes de todos los post y retornar el resultado.
   // Tu código:
+
+  // VEMOS SI RECIBIMOS EL OBJETO
+  console.log(objetoUsuario);
+ 
+ // VEMOS CANTIDAD DE POSTS
+  console.log((objetoUsuario.posts).length); 
+
+  // INICIALIZAMOS EL ACUMULADOR
+  cantidadDeLikes = 0;
+
+  // RECORREMOS EL VECTOR DEL OBJETO
+  for (var i = 0; i < (objetoUsuario.posts).length; i++){
+    console.log(objetoUsuario.posts[i]);
+  }
+
 }
+
+var objetoPrueba9 = {
+  usuario: "Pepito123",
+  password: "1234",
+  posts: [
+    { id: 1, post: "prueba", likes: 5 },
+    { id: 2, post: "prueba2", likes: 235 },
+    { id: 3, post: "asd", likes: 3000 },
+  ],
+};
+
+console.log(sumarLikesDeUsuario(objetoPrueba9));
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
   // Agrega una propiedad al "objetoProducto" con el nombre "calcularPrecioDescuento".
