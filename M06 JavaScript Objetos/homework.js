@@ -136,9 +136,13 @@ function tieneEmail(objetoUsuario) {
 
   console.log(objetoUsuario);
 
-  if (objetoUsuario.email != "") {
+  if (objetoUsuario.email != null) {
     return true;
-  } else {
+  } else if (
+    objetoUsuario.email == null ||
+    objetoUsuario.email == undefined ||
+    objetoUsuario.email == ""
+  ) {
     return false;
   }
 }
@@ -181,9 +185,8 @@ function verificarPassword(objetoUsuario, password) {
 
   console.log(objetoUsuario);
   console.log(password);
-  console.log(objetoUsuario.hasOwnProperty("password"));
 
-  if (objetoUsuario.hasOwnProperty("password")) {
+  if (objetoUsuario.password == password) {
     return true;
   } else {
     return false;
@@ -195,7 +198,7 @@ var objetoPrueba7 = {
   password: "123",
 };
 
-console.log(verificarPassword(objetoPrueba7, "123"));
+console.log(verificarPassword(objetoPrueba7, "1234"));
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
   // Reemplaza la contrseña guardada en la propiedad "password" del "objetoUsuario".
@@ -272,18 +275,22 @@ function sumarLikesDeUsuario(objetoUsuario) {
 
   // VEMOS SI RECIBIMOS EL OBJETO
   console.log(objetoUsuario);
- 
- // VEMOS CANTIDAD DE POSTS
-  console.log((objetoUsuario.posts).length); 
+
+  // VEMOS CANTIDAD DE POSTS
+  console.log(objetoUsuario.posts.length);
 
   // INICIALIZAMOS EL ACUMULADOR
   cantidadDeLikes = 0;
 
-  // RECORREMOS EL VECTOR DEL OBJETO
-  for (var i = 0; i < (objetoUsuario.posts).length; i++){
-    console.log(objetoUsuario.posts[i]);
+  // RECORREMOS EL VECTOR DEL OBJETO Y SUMAMOS LIKES
+  for (var i = 0; i < objetoUsuario.posts.length; i++) {
+    cantidadDeLikes = objetoUsuario.posts[i].likes + cantidadDeLikes;
+    console.log(cantidadDeLikes);
   }
 
+  // CANTIDAD DE LIKES TOTALES
+
+  return cantidadDeLikes;
 }
 
 var objetoPrueba9 = {
